@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Dropdown</title>
+  <style>
+
+    /* Small Reset */
+    *::before, *::after, * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    } 
+    body {
+      background: #222;
+      color: #fff;
+      font-family: sans-serif;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+    }
+
+    nav {
+      background: rgb(92, 182, 98);
+    }
+    nav > ul {
+      list-style: none;
+      display: flex;
+    }
+    li a {
+      display: block;
+    }
+    nav > ul > li > a {
+      padding: 1rem;
+    }
+
+    .dd {
+      position: relative;
+    }
+
+    nav > ul > li ul {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      list-style: none;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(0, 193, 13);
+    }
+
+    nav > ul > li ul > li a { 
+      padding: 1rem 0.3rem;
+      min-width: 130px;
+      text-align: center;
+    }
+
+    li:hover {
+      background: rgb(0, 137, 9);
+    }
+
+    /* .hidden {
+      display: none;
+    } */
+
+  
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+      <li class="dd"><a href="#">Dropdown</a>
+        <ul>
+          <li><a href="#">DD-Link 1</a></li>
+          <li><a href="#">DD-Link 2</a></li>
+          <li><a href="#">DD-Link 3</a></li>
+        </ul>
+      </li>
+      <li class="dd"><a href="#">Dropdown</a>
+        <ul>
+          <li><a href="#">DD-Link 1</a></li>
+          <li><a href="#">DD-Link 2</a></li>
+          <li><a href="#">DD-Link 3</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <script>
+    $('.dd ul').hide()
+    $('.dd').click(function ( ) {
+      $(this).find('ul').slideToggle(500)
+    })
+  </script>
+</body>
+</html>

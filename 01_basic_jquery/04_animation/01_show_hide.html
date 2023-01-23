@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Animation - Show and Hide</title>
+  <style>
+
+    body {
+      background: #222;
+    }
+
+    .box {
+      width: 150px;
+      height: 150px;
+      background: hotpink;
+    }
+
+    .trigger {
+      border: solid 1px white;
+      padding: 1rem;
+      color: white;
+    }
+    
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+  
+  <div class="trigger show">Trigger</div>
+  <!-- <div class="trigger toggle hide">Toggle</div> -->
+  <div class="box"></div>
+
+  <script>
+    // Show and hide
+    // $('.box').hide()
+    // $('.box').show()
+
+
+    // Hides box when trigger is clicked
+    // $('.trigger').click( function () {
+    //   $('.box').hide()
+    // })
+
+    // Toggles the class of the box
+    // $('.toggle').click( function () { 
+    //   if ($('.box').hasClass('active')) {
+    //     $('.box').hide(1000000)
+    //     $('.box').removeClass('active')
+    //   } else {
+    //     $('.box').show(1000000)
+    //     $('.box').addClass('active')
+    //   }
+    // })
+
+    // $('.toggle').click(function () {
+    //   $('.box').toggle('fast')
+    // })
+
+    // // Slide Down 
+    // $('.toggle').click(function () {
+    //   $('.box').slideDown(100)
+    // })
+    // // Slide Up 
+    // $('.toggle').click(function () {
+    //   $('.box').slideUp(100)
+    // })
+
+
+    // Slide Down 
+    // $('.show').click(function () {
+    //   $('.box').fadeIn(10000)
+    // })
+    // // // Slide Up 
+    // $('.hide').click(function () {
+    //   $('.box').fadeOut(10000)
+    // })
+
+    // Animate
+
+    $('.trigger').click( function () {
+      $('.box').animate({
+        marginLeft: '30vw',
+        marginTop: '300px'
+      }, 2000, function () {
+        console.log('Animation is done!')
+      })
+    })
+  </script>
+</body>
+</html>

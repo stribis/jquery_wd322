@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover Exercise</title>
+  <style>
+    .square {
+      width: 200px;
+      height: 200px;
+      background: orange;
+    }
+
+    .in, .out {
+      width: 200px;
+      background: grey;
+      padding: 0.35rem;
+    }
+
+    .out {
+      background: greenyellow;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+  
+
+  <div class="square"></div>
+  <!-- <div class="in">Your cursor is in the square</div>
+  <div class="out">Your cursor is outside the square</div> -->
+
+  <script>
+
+    // $('.square').after('<div class="out">Your cursor is outside the square</div>').hide()
+    // $('.square').after('<div class="in">Your cursor is in the square</div>')
+
+    $('<div class="in">Your cursor is in the square</div>').appendTo('body').hide()
+    $('<div class="out">Your cursor is outside the square</div>').appendTo('body').hide()
+
+    $('.square').hover(function () {
+      // Mouse IN
+      $(this).css({'background-color' : 'red'})
+      $('.in').slideDown()
+      $('.out').slideUp()
+    }, function () {
+      // Mouse OUT
+      $(this).css({'background-color': 'orange'})
+      $('.in').slideUp()
+      $('.out').slideDown()
+    })
+  </script>
+</body>
+</html>
