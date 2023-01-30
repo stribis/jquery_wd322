@@ -1,0 +1,114 @@
+/* Small Reset */
+*::before, *::after, * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  background: #222;
+  color: white;
+}
+
+h1,h2,h3,h4 {
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 700;
+}
+
+nav {
+  background-color: #222;
+  position: absolute;
+  top: 0;
+}
+
+nav ul  {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav ul li {
+  padding: 1rem 0;
+  margin: 0 2rem;
+  list-style: none;
+}
+
+nav a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: hotpink;
+}
+
+nav a:hover {
+  color: white;
+}
+
+body > section {
+  min-height: 600px;
+
+}
+
+header {
+  font-size: 5rem;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+section.about, section.story {
+  padding: 4rem 6rem;
+  font-size: 1.3rem;
+}
+section.about p{
+  max-width: 70%;
+}
+
+h2{
+  font-size: 3rem;
+
+}
+
+
+.line {
+  background: #eee;
+  width: 5px;
+  height: 800px;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.point {
+  width: 25px;
+  height: 25px;
+  background-color: hotpink;
+  border-radius: 100%;
+  position: relative;
+}
+
+.year {
+  margin: 0.1rem 0 0 2.5rem;
+  display: block;
+}
+
+.card {
+  position: absolute;
+  width: 300px;
+  height: 150px;
+  border: solid 2px #eee;
+  padding: 1rem;
+  border-radius: 8px;
+  left: 2.5rem;
+  top: calc(100% + 5px);
+}
+
+.card.hidden {
+  display: none;
+}

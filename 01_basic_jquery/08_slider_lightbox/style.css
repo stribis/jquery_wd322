@@ -1,0 +1,131 @@
+/* Small Reset */
+*::before, *::after, * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, purple, hotpink);
+}
+
+.slideshow {
+  position: relative;
+  width: 900px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.slide {
+  width: 900px;
+  height: 500px;
+  background: #666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.lighter {
+  background: #bbb;
+}
+
+.left, .right {
+  z-index: 9999;
+  border-radius: 0 8px 8px 0 ;
+  padding: 1rem;
+  color: white;
+  background-color: #222;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right {
+  border-radius: 8px 0 0 8px;
+  right: 0;
+}
+
+.slideshow > ul {
+  margin-left: -900px;
+  display: flex;
+  position: absolute;
+  list-style: none;
+}
+
+.autoplay {
+  z-index: 9999;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  padding: 0.8rem;
+  border-radius: 8px 8px 0 0;
+  background: #222;
+  color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+  
+  .slideshow { 
+    width: 600px;
+    height: 400px;
+  }
+  .slide { 
+    width: 600px;
+    height: 400px;
+  }
+
+  .slideshow ul {
+    margin-left: -600px;
+  }
+}
+
+/* Gallery */
+.slider-container {
+  width: 100vw;
+  height: 100vh;
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.gallery ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+}
+.gallery ul li {
+  width: 100px;
+  height: 100px;
+  background:#bbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery ul li:hover {
+  cursor: pointer;
+  border: solid 1px white;
+}
+
+.gallery ul li.lighter {
+  background:#666;
+}
